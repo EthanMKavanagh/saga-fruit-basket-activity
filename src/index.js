@@ -15,6 +15,18 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('FETCH_FRUIT', fetchFruitSaga);
     yield takeEvery('CREATE_FRUIT', createFruitSaga);
+    yield takeEvery('DELETE_FRUIT', deleteFruitSaga);
+}
+
+function* deleteFruitSaga(action) {
+    yield axios({
+        method: 'DELETE',
+        url: `/fruit/${action.payload}`
+    });
+
+    yield put({
+        type: 'FETCH_FRUIT'
+    });
 }
 
 function* fetchFruitSaga(action) {
