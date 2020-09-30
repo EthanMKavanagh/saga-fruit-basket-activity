@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../App/App.css';
 
 class FruitItem extends Component {
     removeItem = () => {
@@ -7,15 +8,6 @@ class FruitItem extends Component {
             type: 'DELETE_FRUIT',
             payload: this.props.basketItem.id
         });
-        // axios({
-        //     method: 'DELETE',
-        //     url: `/fruit/${this.props.basketItem.id}`
-        // }).then((response) => {
-        //     this.getFruit();
-        // }).catch((error) => {
-        //     console.log(error);
-        //     alert('Unable to delete item');
-        // });  
     }
 
     getFruit() {
@@ -27,8 +19,8 @@ class FruitItem extends Component {
     render() {
         return (
             <li>
-                <span>{this.props.basketItem.fruit}</span>
-                <button onClick={this.removeItem}>Remove</button>
+                <span className='listItem'>{this.props.basketItem.fruit}</span>
+                <button className='listItem' onClick={this.removeItem}>Remove</button>
             </li>
         )
     }

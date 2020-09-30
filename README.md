@@ -21,7 +21,7 @@ Let's add Sagas to our React Redux fruit basket.
 ### Stretch 
 
 - [x] Create a Saga for DELETE
-- [ ] Improve styling on the page
+- [x] Improve styling on the page
 
 ## Sagas Notes
 

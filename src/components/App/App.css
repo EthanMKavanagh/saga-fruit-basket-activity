@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+body {
+  background-color: peachpuff;
+}
+
+.fruitBtn {
+  margin: 5px;
+}
+
+.listItem {
+  margin: 3px;
+}
 
 .App-header {
   background-color: #222;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../App/App.css';
 
 class FruitSelector extends Component {
 
@@ -21,10 +22,10 @@ class FruitSelector extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.addFruit('Apple')}>Add Apple</button>
-                <button onClick={this.addFruit('Orange')}>Add Orange</button>
-                <button onClick={this.addFruit('Watermelon')}>Add Watermellon</button>
-                <button onClick={this.addFruit('Grapefruit')}>Add Grapefruit</button>
+                <button className='fruitBtn' onClick={this.addFruit('Apple')}>Add Apple</button>
+                <button className='fruitBtn' onClick={this.addFruit('Orange')}>Add Orange</button>
+                <button className='fruitBtn' onClick={this.addFruit('Watermelon')}>Add Watermellon</button>
+                <button className='fruitBtn' onClick={this.addFruit('Grapefruit')}>Add Grapefruit</button>
             </div>
         )
     }
