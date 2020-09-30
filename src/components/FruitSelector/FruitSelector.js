@@ -19,14 +19,8 @@ class FruitSelector extends Component {
     }
 
     getFruit() {
-        axios({
-            method: 'GET',
-            url: '/fruit'
-        }).then((response) => {
-            const action = { type: 'SET_BASKET', payload: response.data };
-            this.props.dispatch(action);
-        }).catch((error) => {
-            alert('Unable to get basket from server');
+        this.props.dispatch({
+            type: 'FETCH_FRUIT'
         });
     }
 
