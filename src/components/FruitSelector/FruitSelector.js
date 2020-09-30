@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 class FruitSelector extends Component {
 
     // Currying that returns a function
     addFruit = (fruitName) => (event) => {
-        axios({
-            method: 'POST',
-            url: '/fruit',
-            data: { fruit: fruitName }
-        }).then((response) => {
-            this.getFruit();
-        }).catch((error) => {
-            console.log(error);
-            alert('Unable to save fruit');
+        this.props.dispatch({
+            type: 'CREATE_FRUIT',
+            payload: { fruit: fruitName }
         });
     }
 

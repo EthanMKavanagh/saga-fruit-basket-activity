@@ -14,6 +14,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_FRUIT', fetchFruitSaga);
+    yield takeEvery('CREATE_FRUIT', createFruitSaga);
 }
 
 function* fetchFruitSaga(action) {
@@ -25,6 +26,18 @@ function* fetchFruitSaga(action) {
     yield put({
         type: 'SET_BASKET',
         payload: response.data
+    });
+}
+
+function* createFruitSaga(action) {
+    yield axios({
+        method: 'POST',
+        url: '/fruit',
+        data: action.payload
+    });
+
+    yield put({
+        type: 'FETCH_FRUIT'
     });
 }
 

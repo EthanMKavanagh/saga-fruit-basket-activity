@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FruitItem from '../FruitItem/FruitItem.js';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 class FruitList extends Component {
     componentDidMount() {
